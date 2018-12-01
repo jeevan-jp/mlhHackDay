@@ -1,14 +1,15 @@
-/* body {
-  background-color: #1fc8db;
-  background-image: linear-gradient(
-    141deg,
-    #9fb8ad 0%,
-    #1fc8db 51%,
-    #2cb5e8 75%
-  );
-} */
+body {
+  background: #673ab7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #512da8,
+    #673ab7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #512da8, #673ab7);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 .container {
-  min-height: 95vh;
+  min-height: 85%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,4 +22,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
+}
+label {
+  color: white;
 }
