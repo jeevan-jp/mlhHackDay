@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootstrap Example</title>
+    <title>Local hack day</title>
     <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"></script>
+    <link rel="stylesheet" href="scripts/semantic-ui-css/semantic.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="scripts/semantic-ui-css/semantic.min.js"></script>
+    <link href="css/animate.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+    />
+    <link href="css/slick-theme.css" rel="stylesheet" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
       /* Remove the navbar's default margin-bottom and rounded borders */
@@ -39,11 +49,53 @@
       /* On small screens, set height to 'auto' for sidenav and grid */
       @media screen and (max-width: 767px) {
         .sidenav {
-          height: auto;
+          padding-top: 20px;
+          background-color: #f1f1f1;
+          height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+          background-color: #555;
+          color: white;
           padding: 15px;
         }
         .row.content {
           height: auto;
+        }
+      }
+      .st0 {
+        fill: none;
+        stroke: white;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+      }
+
+      text {
+        color: white;
+        font-size: 50px;
+        -moz-transform: translate(20%, 65%);
+      }
+      .imageStyle {
+        height: 620px;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .centreText {
+        display: flex;
+        width: 96%;
+        justify-content: center;
+      }
+
+      @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        .hovering {
+          -webkit-transform: translate(20%, 65%);
+          -webkit-transform-origin: 50% 50% !important;
         }
       }
     </style>
@@ -66,13 +118,13 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
+            <li><a href="#">Hackathons</a></li>
+            <li><a href="#">Events</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="/login.html"
+              <a href="#"
                 ><span class="glyphicon glyphicon-log-in"></span> Login</a
               >
             </li>
@@ -80,5 +132,127 @@
         </div>
       </div>
     </nav>
+    <div
+      class="imageStyle"
+      style="background-image: url('https://evenesis.com/blog/wp-content/uploads/2015/09/evolusi.jpg')"
+    >
+      <div class="centreText">
+        <div class="dropdown" style="height:60px">
+          <button
+            style="height:100%"
+            class="btn-primary btn dropdown-toggle"
+            type="button"
+            data-toggle="dropdown"
+          >
+            choose <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Hackathons</a></li>
+            <li><a href="#">others</a></li>
+          </ul>
+        </div>
+
+        <input
+          type="text"
+          height="40px"
+          width="244px"
+          placeholder="search for events and hackathons"
+          style="height:60px; width:70%;border-radius: 40px"
+        />
+        <button class="btn-primary" color="primary" style="height:60px">
+          Search
+        </button>
+      </div>
+    </div>
+    <!--
+      <div  id="about" class="about sectionPadding">
+        <div class="container">
+          <div class="aboutMe">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 aboutBox">
+                <div class="container-fluid">
+                  <h2 class="titleSection">MLH</h2>
+                  <hr class="line-title-left">
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    <br>
+                    <br> Once again</p>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 aboutPicture">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-6 picone wow slideInLeft">
+                      <img class="img-responsive" src="Pictures/backgrounds/about1.jpg" alt="picture about me">
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6 pictwo wow slideInRight">
+                      <img class="img-responsive" src="Pictures/backgrounds/About2.png" alt="picture about me">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="services" class="services sectionPadding">
+        <div class="container">
+          <div class="titles-section">
+            <h2>Latest Events</h2>
+            <hr class="line-title-center">
+          </div>
+        </div>
+      </div>
+      <div id="portfolio" class="portfolio sectionPadding">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 aboutPicture">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-6 col-md-6 col-lg-6 picone wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">
+                    <img class="img-responsive" src="Pictures/backgrounds/about1.jpg" id="hospital1" alt="picture about me">
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-6 pictwo wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
+                    <img class="img-responsive" src="Pictures/backgrounds/about1.jpg" alt="picture about me">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+              <div class="titles-section ventures-title">
+                <h2>Lorem Ipsum</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="portfolio" class="portfolio sectionPadding">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-lg-6">
+              <div class="titles-section ventures-title">
+                  <h2>Lorem Ipsum</h2>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 aboutPicture">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-6 col-md-6 col-lg-6 picone wow slideInLeft" style="visibility: visible; animation-name: slideInLeft;">
+                    <img class="img-responsive" src="Pictures/backgrounds/about1.jpg" id="hospital1" alt="picture about me">
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-6 pictwo wow slideInRight" style="visibility: visible; animation-name: slideInRight;">
+                    <img class="img-responsive" src="Pictures/backgrounds/about1.jpg" alt="picture about me">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    -->
   </body>
 </html>
